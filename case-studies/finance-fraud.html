@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="LUCdNyaxfE0c9yzFjVX_Eyk6Q5syVMibKt6tzDJjstg" />
-<title>Real-time fraud detection case study | FRACIFY</title>
+<title>NexaPay | Real-time fraud detection with autonomous AI agents | FRACIFY</title>
 <meta name="description" content="How FRACIFY deployed autonomous AI agents to reduce fraud false positives by 94% while processing 50M+ transactions daily for a leading digital bank.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.fracify.in/case-studies/finance-fraud">
@@ -12,158 +12,136 @@
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
-  <canvas id="particles"></canvas>
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="../index.html" class="logo">FRACIFY</a>
-      <div class="nav-links">
-        <a href="../index.html#services" class="nav-link">Services</a>
-        <a href="../index.html#industries" class="nav-link">Industries</a>
-        <a href="../index.html#work" class="nav-link">Case Studies</a>
-        <a href="../index.html#contact" class="nav-link">Contact</a>
-      </div>
-      <button class="menu-btn" id="menuBtn" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+<canvas id="particles"></canvas>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">FRACIFY</a>
+    <div class="nav-links">
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#industries">Industries</a>
+      <a href="../index.html#work">Case Studies</a>
+      <a href="../index.html#contact">Contact</a>
     </div>
-  </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="smooth-wrapper"><div id="smooth-content">
 
-  <div id="smooth-wrapper">
-    <div id="smooth-content">
-
-      <section class="cs-hero">
-        <div class="container">
-          <span class="cs-client">NexaPay &#x2022; Digital banking platform</span>
-          <h1 data-reveal="up">Real-time fraud detection with autonomous AI agents</h1>
-          <div class="cs-meta" data-reveal="up" data-delay="0.1">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Q4 2025</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg> 12 countries</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Finance</span>
-          </div>
-          <div class="cs-stats" data-reveal="up" data-delay="0.2">
-            <div class="cs-stat"><span class="cs-stat-num">94%</span><span class="cs-stat-label">Fewer false positives</span></div>
-            <div class="cs-stat"><span class="cs-stat-num">99.97</span><span class="cs-stat-label">Detection accuracy</span></div>
-            <div class="cs-stat"><span class="cs-stat-num">50M+</span><span class="cs-stat-label">Daily txns processed</span></div>
-            <div class="cs-stat"><span class="cs-stat-num">$340M</span><span class="cs-stat-label">Fraud prevented / yr</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="cs-body">
-        <div class="container">
-          <a href="../index.html#work" class="back-link">&larr; All case studies</a>
-
-          <h2>The challenge</h2>
-          <p>NexaPay, a digital banking platform operating across 12 countries, was processing over 50 million transactions daily. Their existing rule-based fraud detection system was generating an unmanageable volume of false positives — over 18% of legitimate transactions were being flagged for manual review, causing friction for customers and overwhelming their fraud operations team of 200+ analysts.</p>
-          <p>The bank was losing an estimated $12M per quarter in abandoned transactions due to false declines, while actual fraud losses were still averaging $85M annually. Legacy ML models required weeks to retrain and couldn't adapt quickly enough to emerging fraud patterns.</p>
-
-          <div class="cs-quote">
-            <p>"We were drowning in alerts. Our analysts spent 80% of their time investigating false positives, and real fraud was slipping through the cracks. We needed a system that could think like a fraud investigator but operate at machine speed."</p>
-            <div class="cs-quote-author">— Rajesh Mehta</div>
-            <div class="cs-quote-title">VP of Fraud Operations, NexaPay</div>
-          </div>
-
-          <h2>The solution</h2>
-          <p>FRACIFY deployed a swarm of 12 specialized AI agents, each focused on a specific fraud vector. The agents operate in a collaborative architecture, sharing signals and building a unified risk profile for every transaction in under 12 milliseconds.</p>
-
-          <h3>Agent architecture</h3>
-          <div class="cs-methodology">
-            <div class="cs-method-card">
-              <div class="method-step">Agent 01</div>
-              <h4>Transaction profiler</h4>
-              <p>Scores each transaction against 200+ behavioral signals in real-time, including velocity, amount anomalies, and merchant category patterns.</p>
-            </div>
-            <div class="cs-method-card">
-              <div class="method-step">Agent 02</div>
-              <h4>Identity verifier</h4>
-              <p>Cross-references device fingerprint, biometric data, IP geolocation, and historical login patterns to detect account takeover attempts.</p>
-            </div>
-            <div class="cs-method-card">
-              <div class="method-step">Agent 03</div>
-              <h4>Network analyst</h4>
-              <p>Builds real-time graph networks of connected accounts, devices, and merchants to identify synthetic identity rings and organized fraud rings.</p>
-            </div>
-            <div class="cs-method-card">
-              <div class="method-step">Agent 04</div>
-              <h4>Compliance monitor</h4>
-              <p>Flag transactions against global sanctions lists, PEP databases, and regulatory thresholds across all 12 operating jurisdictions.</p>
-            </div>
-          </div>
-
-          <h3>Technology stack</h3>
-          <div class="cs-tech-stack">
-            <span>FRACIFY Orchestrator</span>
-            <span>Graph Neural Networks</span>
-            <span>Transformer encoders</span>
-            <span>Real-time feature store</span>
-            <span>Apache Kafka</span>
-            <span>Federated learning</span>
-            <span>Explainable AI layer</span>
-          </div>
-
-          <h2>Implementation</h2>
-          <p>The deployment followed a phased approach over 14 weeks. The first phase deployed the transaction profiler agent alongside the existing rule engine in shadow mode. Over weeks 3-6, additional agents were brought online with real-time feedback loops. By week 10, the full agent swarm was processing 100% of transactions.</p>
-          <ul>
-            <li>Zero-downtime deployment with parallel run mode for 6 weeks</li>
-            <li>Automated A/B testing framework comparing agent decisions against human analysts</li>
-            <li>Continuous learning pipeline with daily model updates from confirmed fraud cases</li>
-            <li>Full audit trail with explainable AI reasoning for every declined transaction</li>
-            <li>Regulatory compliance across 12 countries including PSD2, PCI DSS, and local banking regulations</li>
-          </ul>
-
-          <h2>Results</h2>
-          <p>Within the first quarter of full production deployment, FRACIFY's agent swarm transformed NexaPay's fraud operations:</p>
-          <ul>
-            <li><strong>94% reduction</strong> in false positive rate — from 18% to just 1.1% of transactions flagged</li>
-            <li><strong>99.97% detection accuracy</strong> for confirmed fraudulent transactions</li>
-            <li><strong>$340M annually</strong> in prevented fraud losses</li>
-            <li><strong>89% reduction</strong> in manual review workload — team rebalanced from investigation to strategy</li>
-            <li><strong>2.3x improvement</strong> in real-time decision speed at 12ms median latency</li>
-            <li><strong>42% decrease</strong> in customer complaints related to false declines</li>
-          </ul>
-
-          <div class="cs-quote">
-            <p>"FRACIFY didn't just improve our metrics — it changed how we think about fraud. Our analysts now spend their time on high-value investigations and strategy instead of clicking through thousands of false alerts. The ROI in the first quarter alone exceeded our total investment."</p>
-            <div class="cs-quote-author">— Sarah Chen</div>
-            <div class="cs-quote-title">CTO, NexaPay</div>
-          </div>
-
-        </div>
-      </section>
-
-      <section class="cs-cta">
-        <div class="container">
-          <h2>Ready to transform your fraud detection?</h2>
-          <p>Deploy autonomous AI agents that stop fraud at machine speed.</p>
-          <div class="magnetic-wrap">
-            <a href="../index.html#contact" class="btn btn-primary" data-magnetic>Contact our team</a>
-          </div>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <div class="container footer-inner">
-          <div class="footer-brand">
-            <a href="../index.html" class="logo">FRACIFY</a>
-            <span class="footer-copy">&copy; 2026 FRACIFY AI, Inc.</span>
-          </div>
-          <div class="footer-links">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Security</a>
-            <a href="#">Docs</a>
-          </div>
-        </div>
-      </footer>
-
+<section class="cs-hero">
+  <div class="container">
+    <div class="cs-breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../index.html#work">Case Studies</a><span>/</span><span>NexaPay</span></div>
+    <div class="cs-tags">
+      <span class="cs-tag cs-tag-industry">Finance</span>
+      <span class="cs-tag">Fraud Detection</span>
+    </div>
+    <h1>94% fewer false positives with autonomous fraud detection</h1>
+    <p class="cs-subtitle">FRACIFY deployed a swarm of 12 specialized AI agents to transform fraud operations for a digital bank processing 50M+ daily transactions across 12 countries.</p>
+    <span class="cs-impact-label">Impact achieved</span>
+    <div class="cs-stats">
+      <div class="cs-stat"><span class="cs-stat-num">94%</span><span class="cs-stat-label">Fewer false positives</span></div>
+      <div class="cs-stat"><span class="cs-stat-num">99.97%</span><span class="cs-stat-label">Fraud detection accuracy</span></div>
+      <div class="cs-stat"><span class="cs-stat-num">$340M</span><span class="cs-stat-label">Fraud prevented annually</span></div>
     </div>
   </div>
+</section>
 
+<section class="cs-about-bar">
+  <div class="container">
+    <div class="cs-about-grid">
+      <div>
+        <h3>About NexaPay</h3>
+        <p>NexaPay is a leading digital banking platform operating across 12 countries, processing over 50 million transactions daily. The platform serves 24 million active users and handles $2.8B in transaction volume annually.</p>
+      </div>
+      <div class="cs-about-meta">
+        <div class="cs-about-meta-item"><div class="meta-label">Employees</div><div class="meta-value">4,200</div></div>
+      </div>
+      <div class="cs-about-meta">
+        <div class="cs-about-meta-item"><div class="meta-label">Annual Revenue</div><div class="meta-value">$1.8B</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-body">
+  <div class="container">
+    <span class="cs-section-label">The challenge</span>
+    <h2>Drowning in alerts, missing real threats</h2>
+    <p>NexaPay's rule-based fraud detection system was generating an unmanageable volume of false positives — over 18% of legitimate transactions were flagged for manual review. A team of 200+ analysts was spending 80% of their time investigating false alarms while real fraud slipped through. The bank was losing $12M per quarter in abandoned transactions due to false declines, with actual fraud losses at $85M annually.</p>
+
+    <div class="cs-columns">
+      <div class="cs-column">
+        <h3>Top challenges</h3>
+        <ul>
+          <li>18% false positive rate overwhelming 200+ fraud analysts</li>
+          <li>Legacy ML models required weeks to retrain — too slow for evolving fraud patterns</li>
+          <li>$85M annual fraud losses with $12M quarterly revenue loss from false declines</li>
+          <li>No cross-channel fraud correlation across web, mobile, and API transactions</li>
+        </ul>
+      </div>
+      <div class="cs-column">
+        <h3>Skills deployed</h3>
+        <ul>
+          <li>Multi-agent AI fraud detection with 12 specialized agents</li>
+          <li>Real-time graph neural networks for synthetic identity detection</li>
+          <li>Explainable AI with full audit trails for regulatory compliance</li>
+          <li>Federated learning for cross-border fraud pattern recognition</li>
+        </ul>
+      </div>
+    </div>
+
+    <span class="cs-section-label">The solution</span>
+    <h2>Collaborative AI agents that think like fraud investigators</h2>
+    <p>FRACIFY deployed a swarm of 12 specialized AI agents, each focused on a specific fraud vector. The agents operate in a collaborative architecture, sharing signals and building a unified risk profile for every transaction in under 12 milliseconds. Each agent specializes — transaction profiling, identity verification, network analysis, compliance monitoring — and they continuously learn from each other's findings.</p>
+
+    <div class="cs-tech-stack">
+      <span>FRACIFY Orchestrator</span><span>Graph Neural Networks</span><span>Transformer Encoders</span>
+      <span>Real-time Feature Store</span><span>Apache Kafka</span><span>Federated Learning</span>
+      <span>Explainable AI Layer</span>
+    </div>
+
+    <span class="cs-section-label">Results</span>
+    <h2>Tangible outcomes in the first quarter</h2>
+    <p>Within the first quarter of full production deployment, FRACIFY's agent swarm transformed NexaPay's fraud operations:</p>
+
+    <div class="cs-results-grid">
+      <div class="cs-result-card"><span class="result-pct">94%</span><span class="result-text">Reduction in false positive rate — from 18% down to 1.1%</span></div>
+      <div class="cs-result-card"><span class="result-pct">99.97%</span><span class="result-text">Detection accuracy for confirmed fraudulent transactions</span></div>
+      <div class="cs-result-card"><span class="result-pct">$340M</span><span class="result-text">Annual fraud prevention savings achieved</span></div>
+      <div class="cs-result-card"><span class="result-pct">89%</span><span class="result-text">Reduction in manual review workload for analysts</span></div>
+    </div>
+
+    <div class="cs-quote">
+      <p>"FRACIFY didn't just improve our metrics — it changed how we think about fraud. Our analysts now spend their time on high-value investigations and strategy instead of clicking through thousands of false alerts. The ROI in the first quarter alone exceeded our total investment."</p>
+      <div class="cs-quote-author">— Sarah Chen</div>
+      <div class="cs-quote-title">CTO, NexaPay</div>
+    </div>
+
+    <div class="cs-nav-links">
+      <a href="../index.html#work">&larr; All case studies</a>
+      <a href="healthcare-diagnostics">Next: Healthcare diagnostics &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="cs-cta">
+  <div class="container">
+    <h2>Ready to transform your fraud detection?</h2>
+    <p>Deploy autonomous AI agents that stop fraud at machine speed. Join 847 enterprises already running FRACIFY in production.</p>
+    <div class="magnetic-wrap"><a href="../index.html#contact" class="btn btn-primary" data-magnetic>Contact our team</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><a href="../index.html" class="logo">FRACIFY</a><span class="footer-copy">&copy; 2026 FRACIFY AI, Inc.</span></div>
+    <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a><a href="#">Docs</a></div>
+  </div>
+</footer>
+
+</div></div>
 <script src="../js/main.js"></script>
 </body>
 </html>
