@@ -30,6 +30,23 @@
 </head>
 <body>
 
+<div class="loader" id="loader">
+  <div class="loader-grid">
+    <div class="loader-cell"></div>
+    <div class="loader-cell"></div>
+    <div class="loader-cell"></div>
+    <div class="loader-cell"></div>
+    <div class="loader-cell"></div>
+    <div class="loader-cell"></div>
+    <div class="loader-cell"></div>
+    <div class="loader-cell"></div>
+    <div class="loader-cell"></div>
+  </div>
+  <div class="loader-count-wrap">
+    <span class="loader-count" id="loaderCount">0</span><span class="loader-pct">%</span>
+  </div>
+</div>
+
   <canvas id="particles"></canvas>
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
@@ -50,6 +67,15 @@
     </div>
   </nav>
 
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="index.html#services" class="mobile-link">Services</a>
+      <a href="index.html#industries" class="mobile-link">Industries</a>
+      <a href="index.html#work" class="mobile-link">Case Studies</a>
+      <a href="index.html#contact" class="mobile-link">Contact</a>
+    </div>
+  </div>
+
   <div id="smooth-wrapper">
     <div id="smooth-content">
 
@@ -66,9 +92,9 @@
         <div class="container">
 
           <div class="stat-grid">
-            <div class="stat-card"><span class="stat-num">89</span><span class="stat-label">Faster triage time</span></div>
-            <div class="stat-card"><span class="stat-num">2s</span><span class="stat-label">Diagnostic inference</span></div>
-            <div class="stat-card"><span class="stat-num">96.3</span><span class="stat-label">Diagnostic accuracy %</span></div>
+            <div class="stat-card card-border-glow"><span class="stat-num"><span class="count-up">89</span>%</span><span class="stat-label">Faster diagnostic triage</span></div>
+            <div class="stat-card card-border-glow"><span class="stat-num"><span class="count-up">96.3</span>%</span><span class="stat-label">Clinical accuracy rate</span></div>
+            <div class="stat-card card-border-glow"><span class="stat-num"><span class="count-up">2.1</span>M</span><span class="stat-label">Patients served annually</span></div>
           </div>
 
           <h2>Augmenting clinicians with AI at the bedside</h2>

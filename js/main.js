@@ -161,27 +161,29 @@
   /* ─── Loader ─── */
   const loader = document.getElementById('loader');
   const loaderCount = document.getElementById('loaderCount');
-  document.body.style.overflow = 'hidden';
+  if (loader && loaderCount) {
+    document.body.style.overflow = 'hidden';
 
-  (function animateLoader() {
-    const duration = 2000;
-    const start = performance.now();
+    (function animateLoader() {
+      const duration = 2000;
+      const start = performance.now();
 
-    function tick(now) {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      loaderCount.textContent = Math.round(eased * 100);
-      if (p < 1) {
-        requestAnimationFrame(tick);
-      } else {
-        setTimeout(function () {
-          loader.classList.add('hidden');
-          document.body.style.overflow = '';
-        }, 500);
+      function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        loaderCount.textContent = Math.round(eased * 100);
+        if (p < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          setTimeout(function () {
+            loader.classList.add('hidden');
+            document.body.style.overflow = '';
+          }, 500);
+        }
       }
-    }
-    requestAnimationFrame(tick);
-  })();
+      requestAnimationFrame(tick);
+    })();
+  }
 
   /* ─── Nav Scroll ─── */
   const nav = document.getElementById('nav');
@@ -196,18 +198,20 @@
   /* ─── Mobile Menu ─── */
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', function () {
-    this.classList.toggle('active');
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-  });
-  document.querySelectorAll('.mobile-link').forEach(function (link) {
-    link.addEventListener('click', function () {
-      menuBtn.classList.remove('active');
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', function () {
+      this.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
     });
-  });
+    document.querySelectorAll('.mobile-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menuBtn.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
 
   /* ─── Progress-Based Reveal Engine ─── */
   // Uses smoothCurrent instead of IntersectionObserver for continuous, progress-based animations
@@ -404,18 +408,21 @@
   animateLoop();
 
   /* ─── Contact Form ─── */
-  document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const btn = this.querySelector('button');
-    const orig = btn.textContent;
-    btn.textContent = 'Sent!';
-    btn.disabled = true;
-    setTimeout(function () {
-      btn.textContent = orig;
-      btn.disabled = false;
-      this.reset();
-    }.bind(this), 2500);
-  });
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = this.querySelector('button');
+      const orig = btn.textContent;
+      btn.textContent = 'Sent!';
+      btn.disabled = true;
+      setTimeout(function () {
+        btn.textContent = orig;
+        btn.disabled = false;
+        this.reset();
+      }.bind(this), 2500);
+    });
+  }
 
   /* ─── Count-Up Animation ─── */
   function animateCountUp(el) {
@@ -485,9 +492,9 @@
     a.addEventListener('click', function (e) {
       const id = this.getAttribute('href');
       if (id === '#') return;
-      e.preventDefault();
       const target = document.querySelector(id);
       if (target) {
+        e.preventDefault();
         const top = target.getBoundingClientRect().top + smoothCurrent;
         window.scrollTo({ top: top - 80, behavior: 'smooth' });
         updateProgress();
