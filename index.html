@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexMind - Autonomous AI Agents for Enterprise</title>
+<meta name="description" content="NexMind deploys swarms of autonomous AI agents that learn, adapt, and execute at machine speed. Enterprise-grade multi-agent orchestration, intelligent analytics, and security.">
+<meta name="keywords" content="AI agents, autonomous AI, enterprise AI, multi-agent orchestration, AI infrastructure, machine learning, intelligent automation">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nexmind.ai"><!-- TODO: update to your actual domain -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="NexMind - Autonomous Intelligence for Enterprise">
+<meta property="og:description" content="Self-learning AI agents that orchestrate complex workflows, analyze billions of signals, and execute decisions at machine speed.">
+<meta property="og:image" content="https://nexmind.ai/og-image.png"><!-- TODO: replace with real image + domain -->
+<meta property="og:url" content="https://nexmind.ai"><!-- TODO: update domain -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NexMind - Autonomous Intelligence for Enterprise">
+<meta name="twitter:description" content="Self-learning AI agents that orchestrate complex workflows, analyze billions of signals, and execute decisions at machine speed.">
+<meta name="twitter:image" content="https://nexmind.ai/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NexMind",
+  "url": "https://nexmind.ai",
+  "description": "Autonomous AI agents for enterprise infrastructure.",
+  "foundingDate": "2023",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@nexmind.ai",
+    "contactType": "sales"
+  }
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%233b82f6'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-weight='bold'>N</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <canvas id="particles"></canvas>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">NexMind</a>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#services" class="mobile-link">Services</a>
+      <a href="#work" class="mobile-link">Work</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+  </div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- Loader -->
+      <div class="loader" id="loader">
+        <div class="loader-grid">
+          <div class="loader-cell"></div>
+          <div class="loader-cell"></div>
+          <div class="loader-cell"></div>
+          <div class="loader-cell"></div>
+          <div class="loader-cell"></div>
+          <div class="loader-cell"></div>
+          <div class="loader-cell"></div>
+          <div class="loader-cell"></div>
+          <div class="loader-cell"></div>
+        </div>
+        <div class="loader-count-wrap">
+          <span class="loader-count" id="loaderCount">0</span><span class="loader-pct">%</span>
+        </div>
+      </div>
+
+      <!-- Hero -->
+      <section class="hero" id="hero" data-section>
+        <div class="hero-mesh"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-floats">
+          <div class="float-shape shape-1"></div>
+          <div class="float-shape shape-2"></div>
+          <div class="float-shape shape-3"></div>
+        </div>
+        <div class="container hero-content">
+          <div class="hero-text">
+            <p class="hero-mini" data-reveal="up" data-delay="0">Pioneering autonomous AI systems</p>
+            <h1 class="hero-title">
+              <span class="hero-line" data-reveal="up" data-delay="0.1">Intelligence</span>
+              <span class="hero-line gradient-text" data-reveal="up" data-delay="0.2">Redefined</span>
+            </h1>
+            <p class="hero-sub" data-reveal="up" data-delay="0.4">Self-learning AI agents that orchestrate complex workflows, analyze billions of signals, and execute decisions at machine speed — all without human intervention.</p>
+            <div class="hero-cta" data-reveal="up" data-delay="0.6">
+              <div class="magnetic-wrap">
+                <a href="#contact" class="btn btn-primary" data-magnetic>Deploy now</a>
+              </div>
+              <div class="magnetic-wrap">
+                <a href="#work" class="btn btn-outline" data-magnetic>View case studies</a>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual" data-reveal="scale" data-delay="0.8">
+            <div class="hero-badge">
+              <svg viewBox="0 0 100 100" class="badge-ring">
+                <path id="ring-path" d="M 50,50 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" fill="none"/>
+                <text><textPath href="#ring-path">NexMind · Autonomous · NexMind · Autonomous ·</textPath></text>
+              </svg>
+              <div class="badge-core">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+            </div>
+            <div class="hero-stats-mini">
+              <div class="mini-stat"><span class="mini-num">99.7</span>% uptime</div>
+              <div class="mini-stat"><span class="mini-num">12</span>ms latency</div>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-hint">
+          <span>Scroll</span>
+          <div class="scroll-line-wrap"><div class="scroll-line-inner"></div></div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="about" id="about" data-section>
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-text">
+              <span class="section-label" data-reveal="up">About</span>
+              <h2 class="section-title" data-reveal="up" data-delay="0.1">We're building the <span class="gradient-text">nervous system</span> for the autonomous age</h2>
+              <p class="section-desc" data-reveal="up" data-delay="0.2">NexMind deploys swarms of specialized AI agents that collaborate, reason, and execute across your entire infrastructure — from cybersecurity to supply chain, finance to healthcare.</p>
+            </div>
+            <div class="about-visual" data-reveal="scale" data-delay="0.3">
+              <div class="about-node-graph">
+                <div class="node node-1"></div>
+                <div class="node node-2"></div>
+                <div class="node node-3"></div>
+                <div class="node node-4"></div>
+                <div class="node node-5"></div>
+                <div class="node-connector"></div>
+              </div>
+            </div>
+          </div>
+          <div class="stats-marquee">
+            <div class="marquee-inner" id="statsMarquee">
+              <div class="marquee-track">
+                <div class="marquee-item"><span class="marquee-num">$2.4B</span> Value secured</div>
+                <div class="marquee-item"><span class="marquee-num">847+</span> Enterprise clients</div>
+                <div class="marquee-item"><span class="marquee-num">99.97%</span> Reliability</div>
+                <div class="marquee-item"><span class="marquee-num">12ms</span> Decision latency</div>
+                <div class="marquee-item"><span class="marquee-num">50M+</span> Daily transactions</div>
+                <div class="marquee-item"><span class="marquee-num">94%</span> Fewer false positives</div>
+                <div class="marquee-item"><span class="marquee-num">89%</span> Faster triage</div>
+                <div class="marquee-item"><span class="marquee-num">32%</span> Cost reduction</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="services" id="services" data-section>
+        <div class="container">
+          <div class="section-header wide">
+            <span class="section-label" data-reveal="up">Capabilities</span>
+            <h2 class="section-title" data-reveal="up" data-delay="0.1">Full-stack <span class="gradient-text">AI agents</span> for every layer of your business</h2>
+          </div>
+          <div class="services-grid">
+            <div class="service-card" data-tilt data-reveal="up" data-delay="0">
+              <div class="card-glow"></div>
+              <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
+              <h3>Autonomous Operations</h3>
+              <p>Self-healing infrastructure agents that monitor, diagnose, and resolve issues before they impact your business — reducing downtime by 94%.</p>
+            </div>
+            <div class="service-card" data-tilt data-reveal="up" data-delay="0.1">
+              <div class="card-glow"></div>
+              <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <h3>Intelligent Analytics</h3>
+              <p>Real-time data pipelines with AI-driven anomaly detection, predictive forecasting, and natural language querying across all your data sources.</p>
+            </div>
+            <div class="service-card" data-tilt data-reveal="up" data-delay="0.2">
+              <div class="card-glow"></div>
+              <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+              <h3>Multi-Agent Orchestration</h3>
+              <p>Coordinate swarms of specialized agents that collaborate, delegate tasks, and optimize workflows in real-time — like a conductor for your AI.</p>
+            </div>
+            <div class="service-card" data-tilt data-reveal="up" data-delay="0.3">
+              <div class="card-glow"></div>
+              <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+              <h3>Security & Compliance</h3>
+              <p>AI-powered threat detection, automated compliance monitoring, and zero-trust communication protocols between every agent in your ecosystem.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work / Horizontal -->
+      <section class="work" id="work" data-section>
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label" data-reveal="up">Case Studies</span>
+            <h2 class="section-title" data-reveal="up" data-delay="0.1">Trusted by <span class="gradient-text">industry leaders</span> worldwide</h2>
+          </div>
+        </div>
+        <div class="work-track-wrap">
+          <div class="work-track" id="workTrack">
+            <div class="work-card" data-tilt>
+              <div class="work-card-bg" style="background:linear-gradient(135deg,#0f172a,#1e293b)"></div>
+              <div class="work-card-content">
+                <span class="work-tag">Finance</span>
+                <h3>Real-time fraud detection</h3>
+                <p>Reduced false positives by 94% while processing 50M+ transactions daily across 12 countries.</p>
+                <div class="work-stat"><span class="work-stat-num">99.97</span>% accuracy</div>
+              </div>
+            </div>
+            <div class="work-card" data-tilt>
+              <div class="work-card-bg" style="background:linear-gradient(135deg,#0c1222,#1a2332)"></div>
+              <div class="work-card-content">
+                <span class="work-tag">Healthcare</span>
+                <h3>Autonomous diagnostics</h3>
+                <p>AI agent network that triages, analyzes, and recommends treatment plans in under 2 seconds.</p>
+                <div class="work-stat"><span class="work-stat-num">89</span>% faster triage</div>
+              </div>
+            </div>
+            <div class="work-card" data-tilt>
+              <div class="work-card-bg" style="background:linear-gradient(135deg,#0f172a,#1e293b)"></div>
+              <div class="work-card-content">
+                <span class="work-tag">Logistics</span>
+                <h3>Supply chain optimization</h3>
+                <p>Multi-agent system that reduced shipping costs by 32% across 12 countries in the first quarter.</p>
+                <div class="work-stat"><span class="work-stat-num">32</span>% cost reduction</div>
+              </div>
+            </div>
+            <div class="work-card" data-tilt>
+              <div class="work-card-bg" style="background:linear-gradient(135deg,#0a1628,#162040)"></div>
+              <div class="work-card-content">
+                <span class="work-tag">Energy</span>
+                <h3>Grid optimization</h3>
+                <p>AI agents balancing renewable energy loads across 3,000+ nodes with 99.3% prediction accuracy.</p>
+                <div class="work-stat"><span class="work-stat-num">99.3</span>% accuracy</div>
+              </div>
+            </div>
+            <div class="work-card" data-tilt>
+              <div class="work-card-bg" style="background:linear-gradient(135deg,#0f172a,#1e293b)"></div>
+              <div class="work-card-content">
+                <span class="work-tag">Retail</span>
+                <h3>Personalized commerce</h3>
+                <p>Real-time recommendation engine that increased average order value by 28% with multi-agent AI.</p>
+                <div class="work-stat"><span class="work-stat-num">28</span>% increase</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="process" id="process" data-section>
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label" data-reveal="up">Process</span>
+            <h2 class="section-title" data-reveal="up" data-delay="0.1">From raw data to <span class="gradient-text">autonomous action</span> in four steps</h2>
+          </div>
+          <div class="process-timeline">
+            <div class="process-line"></div>
+            <div class="process-step" data-reveal="up" data-delay="0">
+              <div class="step-marker"><div class="step-dot"></div></div>
+              <div class="step-content">
+                <span class="step-num">01</span>
+                <h3>Ingest</h3>
+                <p>Connect any data source — APIs, databases, streams, documents. Our agents parse, structure, and index in real-time.</p>
+              </div>
+            </div>
+            <div class="process-step" data-reveal="up" data-delay="0.15">
+              <div class="step-marker"><div class="step-dot"></div></div>
+              <div class="step-content">
+                <span class="step-num">02</span>
+                <h3>Reason</h3>
+                <p>Multi-model reasoning across LLMs, symbolic logic, and reinforcement learning for accurate, context-aware decisions.</p>
+              </div>
+            </div>
+            <div class="process-step" data-reveal="up" data-delay="0.3">
+              <div class="step-marker"><div class="step-dot"></div></div>
+              <div class="step-content">
+                <span class="step-num">03</span>
+                <h3>Act</h3>
+                <p>Execute via API calls, infrastructure changes, or human handoff — with full audit trails and explainability.</p>
+              </div>
+            </div>
+            <div class="process-step" data-reveal="up" data-delay="0.45">
+              <div class="step-marker"><div class="step-dot"></div></div>
+              <div class="step-content">
+                <span class="step-num">04</span>
+                <h3>Learn</h3>
+                <p>Continuous feedback loops that improve accuracy, reduce latency, and adapt to changing conditions automatically.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-section" data-section>
+        <div class="container">
+          <div class="cta-box" data-tilt>
+            <div class="cta-glow"></div>
+            <h2 class="cta-title" data-reveal="up">Ready to deploy <span class="gradient-text">autonomous intelligence</span>?</h2>
+            <p class="cta-desc" data-reveal="up" data-delay="0.15">Join 847 enterprises already running NexMind agents in production.</p>
+            <div class="cta-btns" data-reveal="up" data-delay="0.3">
+              <div class="magnetic-wrap">
+                <a href="#contact" class="btn btn-primary" data-magnetic>Start free trial</a>
+              </div>
+              <div class="magnetic-wrap">
+                <a href="#" class="btn btn-outline" data-magnetic>Book a demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="contact" id="contact" data-section>
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-info">
+              <span class="section-label" data-reveal="up">Contact</span>
+              <h2 class="section-title" data-reveal="up" data-delay="0.1">Let's build the <span class="gradient-text">future</span> together</h2>
+              <p class="contact-desc" data-reveal="up" data-delay="0.2">Enterprise-grade AI deployments start with a conversation. Tell us about your infrastructure.</p>
+              <div class="contact-items" data-reveal="up" data-delay="0.3">
+                <div class="contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>hello@nexmind.ai</span></div>
+                <div class="contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>San Francisco, CA / Remote</span></div>
+              </div>
+            </div>
+            <form class="contact-form" id="contactForm" data-reveal="up" data-delay="0.2">
+              <input type="text" placeholder="Name" required>
+              <input type="email" placeholder="Email" required>
+              <input type="text" placeholder="Company">
+              <textarea placeholder="Tell us about your project" rows="4" required></textarea>
+              <button type="submit" class="btn btn-primary btn-full" data-magnetic>Send message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container footer-inner">
+          <div class="footer-brand">
+            <a href="#" class="logo">NexMind</a>
+            <span class="footer-copy">&copy; 2026 NexMind AI, Inc.</span>
+          </div>
+          <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Security</a>
+            <a href="#">Docs</a>
+          </div>
+        </div>
+        <div class="footer-marquee">
+          <div class="marquee-track-fast">
+            <span>Autonomous Intelligence · </span>
+            <span>Autonomous Intelligence · </span>
+            <span>Autonomous Intelligence · </span>
+            <span>Autonomous Intelligence · </span>
+            <span>Autonomous Intelligence · </span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
