@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nexmind.ai/sitemap.xml
+Sitemap: https://ashishjugran713-glitch.github.io/ai-site/sitemap.xml
