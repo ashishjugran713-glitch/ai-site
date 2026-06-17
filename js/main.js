@@ -389,6 +389,9 @@
     updateReveals();
     updateSplitReveals();
     updateWorkScroll();
+    initCountUps();
+    updateParallax();
+    updateStaggeredReveals();
     requestAnimationFrame(animateLoop);
   }
 
@@ -413,6 +416,58 @@
       this.reset();
     }.bind(this), 2500);
   });
+
+  /* ─── Count-Up Animation ─── */
+  function animateCountUp(el) {
+    const text = el.textContent;
+    const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+    if (isNaN(num)) return;
+    const suffix = text.replace(/[0-9.]/g, '');
+    const isPct = suffix === '%';
+    const duration = 2000;
+    const start = performance.now();
+
+    function tick(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const current = eased * num;
+      el.textContent = (isPct ? current.toFixed(1) : Math.round(current)) + suffix;
+      el.classList.add('animated');
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function initCountUps() {
+    document.querySelectorAll('.count-up:not(.counted)').forEach(function (el) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 80 && rect.bottom > 0) {
+        el.classList.add('counted');
+        animateCountUp(el);
+      }
+    });
+  }
+
+  /* ─── Parallax Float Orbs ─── */
+  function updateParallax() {
+    const orbs = document.querySelectorAll('.float-orb');
+    if (!orbs.length) return;
+    const sy = window.scrollY;
+    orbs.forEach(function (orb) {
+      const speed = parseFloat(orb.getAttribute('data-speed')) || 0.03;
+      orb.style.transform = 'translate3d(0, ' + (sy * speed) + 'px, 0)';
+    });
+  }
+
+  /* ─── Staggered Reveal ─── */
+  function updateStaggeredReveals() {
+    document.querySelectorAll('[data-reveal-stagger]').forEach(function (el) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60 && rect.bottom > 0) {
+        el.classList.add('revealed');
+      }
+    });
+  }
 
   /* ─── Recalc on resize ─── */
   let resizeTimer;
