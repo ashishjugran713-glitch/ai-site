@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="LUCdNyaxfE0c9yzFjVX_Eyk6Q5syVMibKt6tzDJjstg" />
+<title>Energy grid optimization case study | FRACIFY</title>
+<meta name="description" content="How FRACIFY deployed AI agents to balance renewable energy loads across 3,000+ grid nodes with 99.3% prediction accuracy for a national utility.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.fracify.in/case-studies/energy-grid">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%233b82f6'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-weight='bold'>F</text></svg>">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <canvas id="particles"></canvas>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">FRACIFY</a>
+      <div class="nav-links">
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <a href="../index.html#industries" class="nav-link">Industries</a>
+        <a href="../index.html#work" class="nav-link">Case Studies</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <section class="cs-hero">
+        <div class="container">
+          <span class="cs-client">National Power Grid &#x2022; National energy utility</span>
+          <h1 data-reveal="up">Grid optimization with autonomous load-balancing agents</h1>
+          <div class="cs-meta" data-reveal="up" data-delay="0.1">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Q3 2025</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg> National grid, 3,000+ nodes</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Energy</span>
+          </div>
+          <div class="cs-stats" data-reveal="up" data-delay="0.2">
+            <div class="cs-stat"><span class="cs-stat-num">99.3%</span><span class="cs-stat-label">Prediction accuracy</span></div>
+            <div class="cs-stat"><span class="cs-stat-num">23%</span><span class="cs-stat-label">Waste reduction</span></div>
+            <div class="cs-stat"><span class="cs-stat-num">3.2M</span><span class="cs-stat-label">Tons CO2 saved / yr</span></div>
+            <div class="cs-stat"><span class="cs-stat-num">$62M</span><span class="cs-stat-label">Annual savings</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cs-body">
+        <div class="container">
+          <a href="../index.html#work" class="back-link">&larr; All case studies</a>
+
+          <h2>The challenge</h2>
+          <p>The National Power Grid (NPG) manages electricity distribution across 3,000+ substations serving 40 million households. With renewable energy sources now contributing 45% of total generation, grid stability had become increasingly challenging. Solar and wind volatility was causing frequency fluctuations that required rapid load balancing decisions.</p>
+          <p>NPG's legacy SCADA-based system could not keep pace with the complexity of managing distributed energy resources, battery storage, and real-time demand response. Grid operators were averaging 18 minutes to detect and respond to imbalance events, leading to $210M annually in penalty costs and emergency power purchases.</p>
+
+          <h2>The solution</h2>
+          <p>FRACIFY deployed a decentralized agent swarm with 24 node-level agents and 3 regional coordinators. Each node agent manages local load balancing while coordinating with neighbors for global grid stability.</p>
+
+          <h3>Technology stack</h3>
+          <div class="cs-tech-stack">
+            <span>FRACIFY Orchestrator</span>
+            <span>Multi-agent RL</span>
+            <span>SCADA integration</span>
+            <span>Weather forecasting API</span>
+            <span>Battery optimization engine</span>
+            <span>Real-time frequency monitoring</span>
+          </div>
+
+          <h2>Results</h2>
+          <ul>
+            <li><strong>99.3% prediction accuracy</strong> for renewable generation forecasting at 4-hour horizon</li>
+            <li><strong>23% reduction</strong> in energy waste through improved load balancing</li>
+            <li><strong>18 minutes to 45 seconds</strong> — 96% faster imbalance detection and response</li>
+            <li><strong>3.2 million tons</strong> CO2 emissions avoided annually</li>
+            <li><strong>$62M annual savings</strong> from reduced penalties and optimized power purchasing</li>
+          </ul>
+
+          <div class="cs-quote">
+            <p>"FRACIFY's agents have given us the ability to manage renewable volatility at a granularity that was simply impossible before. The grid is more stable, our costs are down, and we're able to integrate more renewable capacity without compromising reliability."</p>
+            <div class="cs-quote-author">— Dr. Elena Petrova</div>
+            <div class="cs-quote-title">Director of Grid Operations, National Power Grid</div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="cs-cta">
+        <div class="container">
+          <h2>Ready to modernize your grid?</h2>
+          <p>Deploy autonomous agents that balance renewable energy at machine speed.</p>
+          <div class="magnetic-wrap">
+            <a href="../index.html#contact" class="btn btn-primary" data-magnetic>Contact our team</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <div class="footer-brand">
+            <a href="../index.html" class="logo">FRACIFY</a>
+            <span class="footer-copy">&copy; 2026 FRACIFY AI, Inc.</span>
+          </div>
+          <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Security</a>
+            <a href="#">Docs</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
