@@ -45,6 +45,9 @@
   <div class="cursor-ring" id="cursorRing"></div>
 
   <div class="scroll-progress" id="scrollProgress"></div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
 
   <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -109,7 +112,7 @@
               <span class="hero-line" data-reveal="up" data-delay="0.1">Intelligence</span>
               <span class="hero-line gradient-text" data-reveal="up" data-delay="0.2">Redefined</span>
             </h1>
-            <p class="hero-sub" data-reveal="up" data-delay="0.4">Self-learning AI agents that orchestrate complex workflows, analyze billions of signals, and execute decisions at machine speed — all without human intervention.</p>
+            <p class="hero-sub" data-reveal="up" data-delay="0.4">Self-learning AI agents that <span class="typewriter-wrap"><span id="typewriterText" data-words='["orchestrate complex workflows","analyze billions of signals","execute decisions at machine speed"]'></span></span> — all without human intervention.</p>
             <div class="hero-cta" data-reveal="up" data-delay="0.6">
               <div class="magnetic-wrap">
                 <a href="#contact" class="btn btn-primary btn-shimmer" data-magnetic>Deploy now</a>
@@ -358,6 +361,35 @@
                 <h3>Learn</h3>
                 <p>Continuous feedback loops that improve accuracy, reduce latency, and adapt to changing conditions automatically.</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials" id="testimonials" data-section>
+        <div class="container">
+          <div class="section-header" style="text-align:center">
+            <span class="section-label" data-reveal="up">Trusted by leaders</span>
+            <h2 class="section-title" data-reveal="up" data-delay="0.1">What our <span class="gradient-text">partners</span> say</h2>
+          </div>
+          <div class="testimonials-rotator" id="testimonialRotator" data-reveal="up" data-delay="0.2">
+            <div class="testimonial-slide active">
+              <p>"FRACIFY didn't just improve our metrics — it changed how we think about fraud. Our analysts now spend their time on high-value investigations instead of clicking through thousands of false alerts."</p>
+              <div class="attribution"><strong>Sarah Chen</strong> — CTO, NexaPay</div>
+            </div>
+            <div class="testimonial-slide">
+              <p>"The FRACIFY agents create a genuinely personalized experience for every single customer, whether they're shopping on their phone or walking into one of our stores."</p>
+              <div class="attribution"><strong>Jennifer Walsh</strong> — Chief Digital Officer, ShopMax Retail</div>
+            </div>
+            <div class="testimonial-slide">
+              <p>"FRACIFY's agents have given us the ability to manage renewable volatility at a granularity that was simply impossible before. The grid is more stable, our costs are down."</p>
+              <div class="attribution"><strong>Dr. Elena Petrova</strong> — Director of Grid Operations, National Power Grid</div>
+            </div>
+            <div class="testimonial-dots">
+              <button class="testimonial-dot active" aria-label="Slide 1"></button>
+              <button class="testimonial-dot" aria-label="Slide 2"></button>
+              <button class="testimonial-dot" aria-label="Slide 3"></button>
             </div>
           </div>
         </div>

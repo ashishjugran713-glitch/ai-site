@@ -403,6 +403,8 @@
   setTimeout(function () {
     processSplitText();
     resizeSmooth();
+    initTypewriter();
+    initTestimonials();
   }, 100);
 
   animateLoop();
@@ -474,6 +476,88 @@
         el.classList.add('revealed');
       }
     });
+  }
+
+  /* ─── Back to Top Button ─── */
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 600) { backToTop.classList.add('visible'); }
+      else { backToTop.classList.remove('visible'); }
+    }, { passive: true });
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ─── Typewriter Effect ─── */
+  function initTypewriter() {
+    const el = document.getElementById('typewriterText');
+    if (!el) return;
+    const words = JSON.parse(el.getAttribute('data-words') || '[]');
+    if (!words.length) return;
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const cursor = document.createElement('span');
+    cursor.className = 'typewriter-cursor';
+    el.after(cursor);
+
+    function type() {
+      const current = words[wordIndex];
+      if (isDeleting) {
+        el.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        el.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+      }
+      let speed = isDeleting ? 30 : 60;
+      if (!isDeleting && charIndex === current.length) {
+        speed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        speed = 300;
+      }
+      setTimeout(type, speed);
+    }
+    type();
+  }
+
+  /* ─── Testimonial Rotator ─── */
+  function initTestimonials() {
+    const rotator = document.getElementById('testimonialRotator');
+    if (!rotator) return;
+    const slides = rotator.querySelectorAll('.testimonial-slide');
+    if (slides.length < 2) return;
+    const dots = rotator.querySelectorAll('.testimonial-dot');
+    let current = 0;
+    let interval;
+
+    function showSlide(index) {
+      slides.forEach(function (s) { s.classList.remove('active'); });
+      dots.forEach(function (d) { d.classList.remove('active'); });
+      slides[index].classList.add('active');
+      if (dots[index]) dots[index].classList.add('active');
+      current = index;
+    }
+
+    function nextSlide() { showSlide((current + 1) % slides.length); }
+
+    function startAuto() { interval = setInterval(nextSlide, 4000); }
+    function stopAuto() { clearInterval(interval); }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        stopAuto();
+        showSlide(i);
+        startAuto();
+      });
+    });
+
+    startAuto();
   }
 
   /* ─── Recalc on resize ─── */
