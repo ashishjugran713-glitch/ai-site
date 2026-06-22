@@ -257,9 +257,20 @@
       if (type === 'up') {
         el.style.opacity = eased;
         el.style.transform = 'translateY(' + (50 * (1 - eased)) + 'px)';
+      } else if (type === 'left') {
+        el.style.opacity = eased;
+        el.style.transform = 'translateX(' + (-60 * (1 - eased)) + 'px)';
+      } else if (type === 'right') {
+        el.style.opacity = eased;
+        el.style.transform = 'translateX(' + (60 * (1 - eased)) + 'px)';
       } else if (type === 'scale') {
         el.style.opacity = eased;
         el.style.transform = 'scale(' + (0.85 + 0.15 * eased) + ')';
+      } else if (type === 'scale-in') {
+        el.style.opacity = eased;
+        el.style.transform = 'scale(' + (0.9 + 0.1 * eased) + ')';
+      } else if (type === 'fade') {
+        el.style.opacity = eased;
       }
     });
   }
@@ -403,6 +414,8 @@
   setTimeout(function () {
     processSplitText();
     resizeSmooth();
+    initTypewriters();
+    initTestimonials();
   }, 100);
 
   animateLoop();
@@ -473,6 +486,97 @@
       if (rect.top < window.innerHeight - 60 && rect.bottom > 0) {
         el.classList.add('revealed');
       }
+    });
+  }
+
+  /* ─── Back to Top Button ─── */
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 600) { backToTop.classList.add('visible'); }
+      else { backToTop.classList.remove('visible'); }
+    }, { passive: true });
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ─── Typewriter Effect ─── */
+  function initTypewriters() {
+    document.querySelectorAll('[data-typewriter]').forEach(function (el) {
+      if (el.dataset.typewriterInit) return;
+      el.dataset.typewriterInit = 'true';
+      var words;
+      try { words = JSON.parse(el.getAttribute('data-typewriter')); }
+      catch (e) { return; }
+      if (!words || !words.length) return;
+      var wordIndex = 0;
+      var charIndex = 0;
+      var isDeleting = false;
+      var cursor = document.createElement('span');
+      cursor.className = 'typewriter-cursor';
+      el.after(cursor);
+
+      function type() {
+        var current = words[wordIndex];
+        if (isDeleting) {
+          el.textContent = current.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          el.textContent = current.substring(0, charIndex + 1);
+          charIndex++;
+        }
+        var speed = isDeleting ? 25 : 50;
+        if (!isDeleting && charIndex === current.length) {
+          speed = 2500;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          speed = 400;
+        }
+        setTimeout(type, speed);
+      }
+      type();
+    });
+  }
+
+  /* ─── Testimonial Rotator ─── */
+  function initTestimonials() {
+    document.querySelectorAll('.testimonials-rotator').forEach(function (rotator) {
+      var slides = rotator.querySelectorAll('.testimonial-slide');
+      if (slides.length < 2) { 
+        // If only one slide, just show it
+        slides.forEach(function(s) { s.classList.add('active'); });
+        return;
+      }
+      var dots = rotator.querySelectorAll('.testimonial-dot');
+      var current = 0;
+      var interval;
+
+      function showSlide(index) {
+        slides.forEach(function (s) { s.classList.remove('active'); });
+        dots.forEach(function (d) { d.classList.remove('active'); });
+        slides[index].classList.add('active');
+        if (dots[index]) dots[index].classList.add('active');
+        current = index;
+      }
+
+      function nextSlide() { showSlide((current + 1) % slides.length); }
+
+      function startAuto() { interval = setInterval(nextSlide, 4000); }
+      function stopAuto() { clearInterval(interval); }
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+          stopAuto();
+          showSlide(i);
+          startAuto();
+        });
+      });
+
+      showSlide(0);
+      startAuto();
     });
   }
 

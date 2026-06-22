@@ -1,4 +1,4 @@
-# NexMind - Autonomous AI Agents
+# FRACIFY - Anti-Imperonation & Hiring Fraud Prevention
 
 ## Deploy to GitHub Pages
 
@@ -30,7 +30,7 @@ Then enable Pages in repo Settings → Pages → deploy from `main` `/ (root)`.
 
 ## SEO
 
-- **Canonical URL** in `index.html` line 12 — update `https://nexmind.ai` to your actual domain
+- **Canonical URL** in `index.html` line 12 — update `https://fracify.in` to your actual domain
 - **OG image** placeholder at line 17 — replace with a real 1200×630px image
 - **Sitemap** at `sitemap.xml` — update domain if custom
 - **robots.txt** — update domain if custom
